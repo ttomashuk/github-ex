@@ -1,0 +1,32 @@
+{
+  "name": "Github extension",
+  "description": "Github repository searcher",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Github extension",
+      "default_icon": "icons/inactive_128.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://github.com/*",
+        "https://github.com/*"
+      ],
+      "js": [
+        "lib/jquery.js",
+        "inject.js"
+      ],
+      "run_at": "document_idle"
+    }
+	]
+
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Set Page Color Popup</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/underscore.js"></script>
+    <script type="text/javascript" src="lib/backbone.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <script type="text/template" id="repo-template">
+      <div class="view">
+        <label><a href="<%- html_url %>" target="_blank"><%- full_name %></></label>
+      </div>
+    </script>
+
+    <div id="github-ex-app" class="panel-heading clearfix">
+
+      <form id="search-form" class="navbar-form navbar-search">
+        <div class="">
+          <div class="form-group">
+              <input id="repo-input" type="text" class="form-control" placeholder="Repository"/>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"> Search</i></button>
+          </div>
+        </div>
+        <div class="input-group">
+            <span>Sort by:</span>
+            <input type="radio" name="sort-by" value="default">Best match
+            <input type="radio" name="sort-by" value="stars">Stars
+        </div>
+      </form>
+
+      <ul id="repo-list"></ul>
+
+    </div>
+
+  </body>
+</html>
