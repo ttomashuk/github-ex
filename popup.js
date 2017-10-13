@@ -107,6 +107,7 @@ $(function(){
       this.searchParams.q = this.repoInput.val();
       localStorage.searchParams = JSON.stringify(this.searchParams);
       this.$("#repo-list").empty();
+      repoCollection.reset();
       repoCollection.fetch(this.searchParams);
       return false;
     }
